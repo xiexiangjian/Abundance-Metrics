@@ -1,0 +1,81 @@
+{
+  "name":"AbundanceTask",
+"baseClass":"ENVITaskFromProcedure",
+"routine":"EnviAbundance",
+"displayName":"Calculation of Abundance",
+"version":"5.3",
+"description":"This task performs Calculation of Abundance.",
+"parameters":[
+    {
+		"name":"input_raster",
+		"displayName":"Input Raster",
+		"dataType":"ENVIRaster",	
+		"direction":"input",
+		"parameterType":"required",
+		"description":"Specify the input raster."
+    },
+    {
+    	"name": "roifile",
+    	"displayName": "Intput ROIs",
+	    "dataType": "ENVIURI",
+    	"direction": "input",
+    	"parameterType":"optional",
+    	"auto_extension": ".XML",
+    	"description": "Select a ROIs FILE."
+    },
+    {
+    	"name": "specLibFiles",
+    	"display_Name": "Intput SpecLibs",
+	    "dataType": "ENVIURI[*]",
+    	"direction": "input",
+    	"parameterType":"optional",
+    	"auto_extension": ".sli",
+    	"description": "Select SpecLib FILES."
+    },
+    {
+      "name":"label_Target",
+      "displayName":"Label of Target",
+      "dataType":"string",
+      "direction":"input",
+	  "parameterType":"optional",
+      "default":"",
+      "description":"Specify input number of features."
+    },
+    {
+      "name":"Weight_method",
+      "displayName":"Methods for Weight",
+      "dataType":"string",
+      "direction":"input",
+      "choiceList": ["1","Gauss"],
+	  "parameterType":"required",
+      "default":"1",
+      "description":"Specify input Methods for Weights of samples."
+    },
+     {
+       "name": "Zero_sample",
+       "displayName": "Zero points",
+       "dataType": "BOOL",
+       "direction": "input",
+       "parameterType": "required",
+       "defaultValue": 0,
+       "description": "Specify true or false for the Additional zero samples."
+     },
+     {
+       "name": "Cosine_flag",
+       "displayName": "Cosine Metric",
+       "dataType": "BOOL",
+       "direction": "input",
+       "parameterType": "required",
+       "defaultValue": 0,
+       "description": "Specify true or false for Cosine Similarity Metric of 3D."
+     },
+    {
+	"name":"OUTPUT_RASTER",
+	"displayName":"Output Raster",
+	"dataType":"ENVIRaster",
+	"direction":"output",
+	"parameterType":"required",
+	"description":"This is a reference to the output raster of filetype ENVI."
+	}
+  ]
+}
